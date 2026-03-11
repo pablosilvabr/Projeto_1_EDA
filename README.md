@@ -2,6 +2,12 @@
 
 Este projeto consiste no desenvolvimento de um sistema em **C++** para simular o funcionamento do "EDA FC", focando-se na gestão de plantéis e dinâmica de jogo.
 
+## Integrantes:
+Andrea Gonçalves 2187825;
+Jesus Gonçalves 2185525;
+Abílio Matute 2178924;
+Pablo Silva 2050225;
+
 ## 🎯 Objetivos do Projeto
 O sistema gere múltiplas listas de jogadores e aplica regras de restrição, garantindo a reorganização eficiente de **arrays dinâmicos**.
 
