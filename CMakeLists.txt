@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 4.1)
+project(Projeto_1)
+
+set(CMAKE_CXX_STANDARD 20)
+
+add_executable(Projeto_1 main.cpp
+)
+
+# Comando para copiar os ficheiros de texto para a pasta de execução automaticamente
+file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/equipas.txt"
+        "${CMAKE_CURRENT_SOURCE_DIR}/nomes.txt"
+        DESTINATION "${CMAKE_CURRENT_BINARY_DIR}")
