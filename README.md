@@ -26,4 +26,8 @@ Para este projeto, a implementação deve focar-se em estruturas de dados manuai
 ## 🛠️ Como Executar
 1. Clone o repositório. https://github.com/pablosilvabr/Projeto_1_EDA.git
 2. Abra o projeto no CLion.
-3. Execute o CMake e faça o Run do projeto..
+3. Execute o CMake e faça o Run do projeto.
+
+## 📖 Documentação Técnica
+Podes encontrar detalhes sobre a implementação nos links abaixo:
+* [Estrutura de Dados e Algoritmos](docs/arquitetura.md)
