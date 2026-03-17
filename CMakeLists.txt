@@ -4,6 +4,10 @@ project(Projeto_1)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(Projeto_1 main.cpp
+        utility.cpp
+        utility.h
+        campeonato.cpp
+        campeonato.h
 )
 
 # Comando para copiar os ficheiros de texto para a pasta de execução automaticamente
