@@ -44,7 +44,25 @@ constexpr int CHANCE_DE_LESAO = 5;
 constexpr int CHANCE_DE_SUSPENSAO = 10;
 constexpr int MAX_QUALIDADE = 100;
 
+constexpr int POSICAO_GR = 0;
+constexpr int POSICAO_DEF = 1;
+constexpr int POSICAO_MED = 2;
+constexpr int POSICAO_AVA = 3;
+
 constexpr const char* FILE_EQUIPAS = "config/equipas.txt";
 constexpr const char* FILE_NOMES = "config/nomes.txt";
 
+
+
+/**
+ *@brief Lê o ficheiro equipas.txt e armazena o nome das equipas em um array dinâmico.
+ * @return Um ponteiro string para o array de vetorOutrasEquipas
+ */
+std::string* leituraEquipas();
+
+/**
+ * @brief Lê o ficheiro nomes.txt e armazena o nome dos atletas em um array dinâmico.
+ * @return Um ponteiro string para o array vetorJogadores
+ */
+std::string* leituraNomes();
 #endif //PROJETO_1_UTK_H

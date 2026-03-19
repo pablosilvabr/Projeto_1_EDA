@@ -8,6 +8,8 @@ add_executable(Projeto_1 main.cpp
         utility.h
         campeonato.cpp
         campeonato.h
+        jogador.cpp
+        jogador.h
 )
 
 # Comando para copiar os ficheiros de texto para a pasta de execução automaticamente
