@@ -11,6 +11,6 @@ add_executable(Projeto_1 main.cpp
 )
 
 # Comando para copiar os ficheiros de texto para a pasta de execução automaticamente
-file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/equipas.txt"
-        "${CMAKE_CURRENT_SOURCE_DIR}/nomes.txt"
+file(COPY "config/equipas.txt"
+        "config/nomes.txt"
         DESTINATION "${CMAKE_CURRENT_BINARY_DIR}")

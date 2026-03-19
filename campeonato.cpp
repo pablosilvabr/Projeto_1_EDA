@@ -4,7 +4,7 @@
 #include <fstream>
 #include <string>
 #include <iostream>
-
+#include "utility.h"
 using namespace std;
 
 
@@ -12,7 +12,7 @@ string* leituraEquipas() {
     int contador = 0;
     string linha;
 
-    ifstream arquivoEquipas1("equipas.txt");
+    ifstream arquivoEquipas1(FILE_EQUIPAS);
 
     if (arquivoEquipas1.is_open()) {
         while (getline(arquivoEquipas1,linha)) {
@@ -22,7 +22,7 @@ string* leituraEquipas() {
     }
     string* vOutrasEquipas = new string [contador];
 
-    ifstream arquivoEquipas2("equipas.txt");
+    ifstream arquivoEquipas2(FILE_EQUIPAS);
 
     if (arquivoEquipas2.is_open()) {
         for (int i=0; i<contador; i++){
@@ -38,7 +38,7 @@ string* leituraNomes() {
     int contador = 0;
     string linha;
 
-    ifstream arquivoJogadores1("nomes.txt");
+    ifstream arquivoJogadores1(FILE_NOMES);
 
     if (arquivoJogadores1.is_open()) {
         while (getline(arquivoJogadores1,linha)) {
@@ -48,7 +48,7 @@ string* leituraNomes() {
     }
     string* vNomeJogadores = new string [contador];
 
-    ifstream arquivoJogadores2("nomes.txt");
+    ifstream arquivoJogadores2(FILE_NOMES);
 
     if (arquivoJogadores2.is_open()) {
         for (int i = 0; i<contador; i++){
