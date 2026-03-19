@@ -10,7 +10,6 @@ using namespace std;
 
 string* leituraEquipas() {
     int contador = 0;
-    int i = 0;
     string linha;
 
     ifstream arquivoEquipas1("equipas.txt");
@@ -21,24 +20,22 @@ string* leituraEquipas() {
         }
         arquivoEquipas1.close();
     }
-    string* vetorOutrasEquipas = new string [contador];
+    string* vOutrasEquipas = new string [contador];
 
     ifstream arquivoEquipas2("equipas.txt");
 
     if (arquivoEquipas2.is_open()) {
-        while (getline(arquivoEquipas2,linha)){
-            vetorOutrasEquipas[i] = linha;
-            i++;
+        for (int i=0; i<contador; i++){
+            getline(arquivoEquipas2,vOutrasEquipas[i]);
         }
         arquivoEquipas2.close();
     }
-    return vetorOutrasEquipas;
+    return vOutrasEquipas;
 }
 
 
 string* leituraNomes() {
     int contador = 0;
-    int i = 0;
     string linha;
 
     ifstream arquivoJogadores1("nomes.txt");
@@ -49,16 +46,15 @@ string* leituraNomes() {
         }
         arquivoJogadores1.close();
     }
-    string* vetorJogadores = new string [contador];
+    string* vNomeJogadores = new string [contador];
 
     ifstream arquivoJogadores2("nomes.txt");
 
     if (arquivoJogadores2.is_open()) {
-        while (getline(arquivoJogadores2,linha)){
-            vetorJogadores[i] = linha;
-            i++;
+        for (int i = 0; i<contador; i++){
+            getline(arquivoJogadores2,vNomeJogadores[i]);
         }
         arquivoJogadores2.close();
     }
-    return vetorJogadores;
+    return vNomeJogadores;
 }
