@@ -5,6 +5,9 @@
 #ifndef PROJETO_1_UTK_H
 #define PROJETO_1_UTK_H
 #include <string>
+
+#include "VetorString.h"
+using namespace std;
 // aqui podemos colocar as constexprantes enquanto
 constexpr int MINIMO_JOGADORES = 20;
 constexpr int MAXIMO_JOGADOS = 30;
@@ -49,8 +52,8 @@ constexpr int POSICAO_DEF = 1;
 constexpr int POSICAO_MED = 2;
 constexpr int POSICAO_AVA = 3;
 
-constexpr const char* FILE_EQUIPAS = "config/equipas.txt";
-constexpr const char* FILE_NOMES = "config/nomes.txt";
+constexpr const char* FILE_EQUIPAS = "../config/equipas.txt";
+constexpr const char* FILE_NOMES = "../config/nomes.txt";
 
 
 
@@ -58,11 +61,11 @@ constexpr const char* FILE_NOMES = "config/nomes.txt";
  *@brief Lê o ficheiro equipas.txt e armazena o nome das equipas em um array dinâmico.
  * @return Um ponteiro string para o array de vetorOutrasEquipas
  */
-std::string* leituraEquipas();
+VetorString leituraEquipas();
 
 /**
  * @brief Lê o ficheiro nomes.txt e armazena o nome dos atletas em um array dinâmico.
  * @return Um ponteiro string para o array vetorJogadores
  */
-std::string* leituraNomes();
+VetorString leituraNomes();
 #endif //PROJETO_1_UTK_H

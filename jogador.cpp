@@ -16,7 +16,7 @@ using namespace std;
 // };
 
 void pullJogadores(Jogador* lista_jogadores, int& numero_jogadores) {
-    string* lista = leituraNomes();//passar tamanho
+    /*string* lista = leituraNomes();//passar tamanho
     int num_por_posicao[4];
 
     num_por_posicao[0] = GR_MIN;
@@ -38,5 +38,5 @@ void pullJogadores(Jogador* lista_jogadores, int& numero_jogadores) {
         int pos = rand() % 4;
         //lista_jogadores[i].posicao = (num_por_posicao[pos]>enum[pos]);
 
-    }
+    }*/
 }
