@@ -16,7 +16,7 @@ using namespace std;
 // };
 
 void pullJogadores(Jogador* lista_jogadores, int& numero_jogadores) {
-    //string* lista = leituraNomes();//passar tamanho
+    VetorString lista = leituraNomes();//passar tamanho
     int num_por_posicao[4];
 
     num_por_posicao[0] = GR_MIN;
@@ -24,7 +24,7 @@ void pullJogadores(Jogador* lista_jogadores, int& numero_jogadores) {
     num_por_posicao[2] = MED_MIN;
     num_por_posicao[3] = AVA_MIN;
 
-    for (int i=0; i<tamArquivoNomes(); i++) {
+    for (int i=0; i<lista.pos; i++) {
         //incompleto fui dormir, continuo dps :)
 
         //lista_jogadores[i].nome = lista[i]; //conflito de char* e char -DEBUG
