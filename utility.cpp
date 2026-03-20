@@ -4,9 +4,12 @@
 #include "utility.h"
 #include <fstream>
 #include <string>
+#include "VetorString.h"
+#include <iostream>
 using namespace std;
 
-int tamArquivoEquipas() {
+
+/*string* leituraEquipas() {
     int contador = 0;
     string linha;
 
@@ -18,13 +21,6 @@ int tamArquivoEquipas() {
         }
         arquivoEquipas1.close();
     }
-    return contador;
-}
-
-
-string* leituraEquipas() {
-    int contador = tamArquivoEquipas();
-
     string* vOutrasEquipas = new string [contador];
 
     ifstream arquivoEquipas2(FILE_EQUIPAS);
@@ -38,7 +34,8 @@ string* leituraEquipas() {
     return vOutrasEquipas;
 }
 
-int tamArquivoNomes() {
+
+string* leituraNomes() {
     int contador = 0;
     string linha;
 
@@ -50,12 +47,6 @@ int tamArquivoNomes() {
         }
         arquivoJogadores1.close();
     }
-    return contador;
-}
-
-string* leituraNomes() {
-    int contador = tamArquivoNomes();
-
     string* vNomeJogadores = new string [contador];
 
     ifstream arquivoJogadores2(FILE_NOMES);
@@ -67,4 +58,26 @@ string* leituraNomes() {
         arquivoJogadores2.close();
     }
     return vNomeJogadores;
+}*/
+
+
+
+VetorString ler(const char* ficheiro) {
+    VetorString vet;
+    string linha;
+    ifstream is(ficheiro);
+    if (is.is_open()) {
+        while (getline(is,linha))
+            vetorInserirValor(vet, linha);
+        is.close();
+    }
+    return vet;
+}
+
+VetorString leituraEquipas() {
+    return ler(FILE_EQUIPAS);
+}
+
+VetorString leituraNomes() {
+    return ler(FILE_NOMES);
 }
