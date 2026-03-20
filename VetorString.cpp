@@ -1,7 +1,6 @@
 //
 // Created by abili on 19/03/2026.
 //
-
 #include "VetorString.h"
 
 void vetorDestruir(VetorString &vetor) {
@@ -9,7 +8,7 @@ void vetorDestruir(VetorString &vetor) {
     vetor.array = 0;
 }
 
-void redimensionarVetor(VetorString &vetor, const float &tam) {
+void redimensionarVetor(VetorString &vetor, const int &tam) {
     int nTam = vetor.tam*tam;
     string * nArray = new string[nTam];
     for (int i=0;i<vetor.pos;i++)
@@ -28,8 +27,6 @@ void vetorInserirValor(VetorString &vetor, const string &valor) {
 void vetorRemoverValor(VetorString &vetor, const int &indice) {
     if (indice < 0 || indice >= vetor.pos)
         return;
-    if (vetor.pos<=vetor.tam*0.25 && vetor.tam > vetor.tamMin)
-        redimensionarVetor(vetor, 0.5);
     for (int i=indice;i<vetor.pos-1;i++)
         vetor.array[i] = vetor.array[i+1];
     vetor.array[--vetor.pos]="";
