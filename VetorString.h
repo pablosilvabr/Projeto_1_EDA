@@ -12,6 +12,7 @@ struct VetorString {
     string * array = new string[4];
     int tam = 4;
     int pos = 0;
+    const int tamMin = 4;
 };
 
 void vetorDestruir(VetorString &vetor);
