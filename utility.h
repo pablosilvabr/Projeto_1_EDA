@@ -70,4 +70,7 @@ std::string* leituraEquipas();
  * @return Um ponteiro string para o array vetorJogadores
  */
 std::string* leituraNomes();
+
+int tamArquivoNomes();
+int tamArquivoEquipas();
 #endif //PROJETO_1_UTK_H
