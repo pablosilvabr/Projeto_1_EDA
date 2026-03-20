@@ -53,6 +53,9 @@ constexpr int POSICAO_AVA = 3;
 constexpr const char* FILE_EQUIPAS = "../config/equipas.txt";
 constexpr const char* FILE_NOMES = "../config/nomes.txt";
 
+//alteração pablo
+constexpr int MAX_PROBLES = 15;
+constexpr int MAX_PROBSUS = 20;
 
 
 /**
