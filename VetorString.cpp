@@ -2,6 +2,7 @@
 // Created by abili on 19/03/2026.
 //
 #include "VetorString.h"
+using namespace std;
 
 void vetorDestruir(VetorString &vetor) {
     delete[] vetor.array;

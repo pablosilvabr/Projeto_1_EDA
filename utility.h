@@ -4,10 +4,8 @@
 
 #ifndef PROJETO_1_UTK_H
 #define PROJETO_1_UTK_H
-#include <string>
 
 #include "VetorString.h"
-using namespace std;
 // aqui podemos colocar as constexprantes enquanto
 constexpr int MINIMO_JOGADORES = 20;
 constexpr int MAXIMO_JOGADOS = 30;
