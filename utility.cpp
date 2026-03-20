@@ -6,8 +6,7 @@
 #include <string>
 using namespace std;
 
-
-string* leituraEquipas() {
+int tamArquivoEquipas() {
     int contador = 0;
     string linha;
 
@@ -19,6 +18,13 @@ string* leituraEquipas() {
         }
         arquivoEquipas1.close();
     }
+    return contador;
+}
+
+
+string* leituraEquipas() {
+    int contador = tamArquivoEquipas();
+
     string* vOutrasEquipas = new string [contador];
 
     ifstream arquivoEquipas2(FILE_EQUIPAS);
@@ -32,8 +38,7 @@ string* leituraEquipas() {
     return vOutrasEquipas;
 }
 
-
-string* leituraNomes() {
+int tamArquivoNomes() {
     int contador = 0;
     string linha;
 
@@ -45,6 +50,12 @@ string* leituraNomes() {
         }
         arquivoJogadores1.close();
     }
+    return contador;
+}
+
+string* leituraNomes() {
+    int contador = tamArquivoNomes();
+
     string* vNomeJogadores = new string [contador];
 
     ifstream arquivoJogadores2(FILE_NOMES);
