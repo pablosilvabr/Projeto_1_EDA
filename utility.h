@@ -24,7 +24,7 @@ constexpr int MED_MIN = 7;
 constexpr int AVA_MAX = 7;
 constexpr int AVA_MIN = 4;
 
-constexpr int CAMPEONATO_N_EQUIPAS = 18;
+constexpr int CAMPEONATO_N_EQUIPAS = 17;
 
 constexpr int MAX_GOLOS = 8;
 //constexpr int Min_GOLOS = 0; //subentendido portanto considero desnecessário
