@@ -74,5 +74,6 @@ Vetor<std::string> leituraNomesA();
 
 int tamArqEquipas();
 int tamArqNomes();
+std::string* leituraNomes();
 std::string nomeAleatorio();
 #endif //PROJETO_1_UTK_H
