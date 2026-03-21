@@ -1,29 +1,54 @@
 #include  <stdlib.h>
 #include <time.h>
 #include <iostream>
-
-#include "Vetor.h"
+#include <iomanip>
 #include "utility.h"
+#include "jogador.h"
+#include "menu.h"
 
 using namespace std;
 
+int main() {
+    mostrarMenu();
+
+    return 0;
+}
+
+
+
+
+
+
+/*
 int main () {
     srand (time(NULL));
-    // cout<<true<<endl;
-    // VetorString lEq = leituraEquipas();
-    // for (int i=0;i<lEq.pos;i++)
-    //     cout<<vetorBuscarValor(lEq, i)<<endl;
-    // cout<<"contagem na lista: "<<lEq.pos<<endl;
-    // cout << "lista cheia: "<<lEq.tam<<endl;
-    // while (!vetorBuscarValor(lEq, 0).empty())
-    //     vetorRemoverValor(lEq, 0);
-    // cout << "lista vazia: "<<lEq.tam<<endl;
-    // vetorDestruir(lEq);
-
-    //exemplo de criação
-    //Vetor<Jogador> jogadores;
 
 
 
     return 0;
 }
+*/
+/*
+int main() {
+    srand(time(NULL));
+
+    int tamanhoReal = 0;
+    cout << "A pedir plantel..." << endl;
+
+    Jogador* meuPlantel = plantel(tamanhoReal);
+
+    cout << "Tamanho recebido no main: " << tamanhoReal << endl;
+    cout << "------------------------------------------" << endl;
+
+    if (tamanhoReal == 0) {
+        cout << "ERRO: O tamanho continua a zero. Verifique o '&' na funcao Plantel!" << endl;
+    }
+
+    for (int i = 0; i < tamanhoReal; i++) {
+        cout << i + 1 << ". " << meuPlantel[i].nome << " [" << meuPlantel[i].posicao << "]" << endl;
+    }
+
+    delete[] meuPlantel;
+    return 0;
+}
+*/
