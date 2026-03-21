@@ -7,7 +7,7 @@
 #include <string>
 struct Jogador {
     int numero;
-    //std::string* nome;
+    std::string* nome;
     int posicao;
     int idade;
     int qualidade;
