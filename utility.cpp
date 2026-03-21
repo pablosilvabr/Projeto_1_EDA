@@ -71,8 +71,6 @@ string* leituraEquipas() {
     return vOutrasEquipas;
 }
 
-
-
 Vetor<string> ler(const char* ficheiro) {
     Vetor<string> vet;
     string linha;
@@ -92,4 +90,16 @@ Vetor<string> leituraEquipasA() {
 
 Vetor<string> leituraNomesA() {
     return ler(FILE_NOMES);
+}
+
+string nomeAleatorio() {
+    int indice = tamArqNomes();
+    //segurança se não estiver lendo o arquivo
+    if (indice <= 0) {
+        return "Jogador_Sem_Nome";
+    }
+    string* todosNomes = leituraNomes();
+    string nomeSorteado = todosNomes[rand() % indice];
+    delete[] todosNomes;
+    return nomeSorteado;
 }
