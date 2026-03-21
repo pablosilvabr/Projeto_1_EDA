@@ -16,4 +16,7 @@ struct Jogador {
 };
 
 Jogador* plantel(int& tam);
+Jogador gerarUmJogador();
+void gerarJogadores(Jogador* destino, int quantidade);
+Jogador* transferencia();
 #endif //PROJETO_1_JOGADOR_H
