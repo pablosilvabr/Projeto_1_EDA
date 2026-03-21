@@ -12,7 +12,7 @@ int tamArqEquipas() {
     int contador = 0;
     string linha;
 
-    ifstream arquivoEquipas("config/equipas");
+    ifstream arquivoEquipas("equipas.txt");
 
     if (arquivoEquipas.is_open()) {
         while (getline(arquivoEquipas,linha)) {
@@ -27,7 +27,7 @@ int tamArqNomes() {
     int contador = 0;
     string linha;
 
-    ifstream arquivoJogadores("config/nomes");
+    ifstream arquivoJogadores("nomes.txt");
 
     if (arquivoJogadores.is_open()) {
         while (getline(arquivoJogadores,linha)) {
@@ -43,7 +43,7 @@ string* leituraNomes() {
 
     string* vNomeJogadores = new string [contador];
 
-    ifstream arquivoJogadores("config/nomes");
+    ifstream arquivoJogadores("nomes.txt");
 
     if (arquivoJogadores.is_open()) {
         for (int i = 0; i<contador; i++){
@@ -59,7 +59,7 @@ string* leituraEquipas() {
 
     string* vOutrasEquipas = new string [contador];
 
-    ifstream arquivoEquipas2("config/equipas");
+    ifstream arquivoEquipas2("equipas.txt");
 
     if (arquivoEquipas2.is_open()) {
         for (int i=0; i<contador; i++){
