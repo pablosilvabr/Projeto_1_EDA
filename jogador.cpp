@@ -14,9 +14,9 @@ using namespace std;
 //     int probLes;
 //     int probSus;
 // };
-
+/*
 Vetor<Jogador> pullJogadores(Vetor<Jogador> lista_jogadores, int& numero_jogadores) {
-    Vetor<string> lista = //leituraNomes();//passar tamanho
+    //Vetor<string> lista = leituraNomes();//passar tamanho
     int num_por_posicao[4];
 
     num_por_posicao[0] = GR_MIN;
@@ -24,10 +24,10 @@ Vetor<Jogador> pullJogadores(Vetor<Jogador> lista_jogadores, int& numero_jogador
     num_por_posicao[2] = MED_MIN;
     num_por_posicao[3] = AVA_MIN;
 
-    for (int i=0; i<lista.pos; i++) {
+    for (int i=0; i<tamArqNomes(); i++) {
         //incompleto fui dormir, continuo dps :)
 
-        //lista_jogadores[i].nome = lista[i]; //conflito de char* e char -DEBUG
+        //lista_jogadores[i].nome = nomeAleatorio(); //conflito de char* e char -DEBUG
 
         //Informações Jogador
 
@@ -46,3 +46,20 @@ Vetor<Jogador> pullJogadores(Vetor<Jogador> lista_jogadores, int& numero_jogador
     }
     return lista_jogadores;
 }
+*/
+
+/*
+Jogador gerarUmJogador() {
+    Jogador novo;
+
+    novo.nome = nomeAleatorio();
+    novo.idade = 18 + (rand() % 17);
+    novo.qualidade = 50 + (rand() % 51);
+    novo.numero = 1 + (rand() % 99);//após estar criado o plantel, devemos verificar numeros repetidos
+    novo.probSus = 5 + (rand()%6);
+    novo.probLes = 5 + (rand()%6);
+    novo.posicao = (rand() % 5);
+
+    return novo;
+}
+*/
