@@ -73,22 +73,23 @@ string* leituraEquipas() {
 
 
 
-// VetorString ler(const char* ficheiro) {
-//     VetorString vet;
-//     string linha;
-//     ifstream is(ficheiro);
-//     if (is.is_open()) {
-//         while (getline(is,linha))
-//             vetorInserirValor(vet, linha);
-//         is.close();
-//     }
-//     return vet;
-// }
-//
-// VetorString leituraEquipas() {
-//     return ler(FILE_EQUIPAS);
-// }
-//
-// VetorString leituraNomes() {
-//     return ler(FILE_NOMES);
-// }
+Vetor<string> ler(const char* ficheiro) {
+    Vetor<string> vet;
+    string linha;
+    ifstream is(ficheiro);
+    if (is.is_open()) {
+        while (getline(is,linha)){
+            vetorInserirValor(vet, linha);
+        }
+        is.close();
+    }
+    return vet;
+}
+
+Vetor<string> leituraEquipasA() {
+    return ler(FILE_EQUIPAS);
+}
+
+Vetor<string> leituraNomesA() {
+    return ler(FILE_NOMES);
+}
