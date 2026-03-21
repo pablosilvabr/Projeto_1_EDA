@@ -27,11 +27,22 @@ void gerarJogadores(Jogador* destino, int quantidade) {
 }
 
 //Precisa criar regras de Jogadores Mínimos por posição
-Jogador* Plantel() {
-    int qtd = 20 + (rand() % 6);
-    Jogador* plantel = new Jogador[qtd];
-    gerarJogadores(plantel, qtd);
-    return plantel;
+//precisa ordenar
+Jogador* plantel(int& tam) {
+    tam = 20;
+    Jogador* novoPlantel = new Jogador[tam];
+    gerarJogadores(novoPlantel, tam);
+    return novoPlantel;
+}
+
+//precisa limpar depois no main
+//precisa ordenar por posição do jogador
+Jogador* transferencia() {
+    int tam = 2;
+
+    Jogador* novoTransferencia = new Jogador[tam];
+    gerarJogadores(novoTransferencia, tam);
+    return novoTransferencia;
 }
 
 /*
