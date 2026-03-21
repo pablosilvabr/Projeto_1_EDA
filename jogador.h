@@ -14,4 +14,6 @@ struct Jogador {
     int probLes;
     int probSus;
 };
+
+Jogador* plantel(int& tam);
 #endif //PROJETO_1_JOGADOR_H
