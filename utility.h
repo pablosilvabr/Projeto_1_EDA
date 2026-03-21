@@ -64,13 +64,13 @@ constexpr int MAX_PROBSUS = 20;
  *@brief Lê o ficheiro equipas.txt e armazena o nome das equipas em um array dinâmico.
  * @return Um ponteiro string para o array de vetorOutrasEquipas
  */
-Vetor<std::string> leituraEquipasA();
+//Vetor<std::string> leituraEquipasA();
 
 /**
  * @brief Lê o ficheiro nomes.txt e armazena o nome dos atletas em um array dinâmico.
  * @return Um ponteiro string para o array vetorJogadores
  */
-Vetor<std::string> leituraNomesA();
+//Vetor<std::string> leituraNomesA();
 
 int tamArqEquipas();
 int tamArqNomes();
