@@ -48,7 +48,7 @@ Vetor<Jogador> pullJogadores(Vetor<Jogador> lista_jogadores, int& numero_jogador
 }
 */
 
-/*
+
 Jogador gerarUmJogador() {
     Jogador novo;
 
@@ -62,4 +62,10 @@ Jogador gerarUmJogador() {
 
     return novo;
 }
-*/
+
+void gerarPlantel(Jogador* plantel, int quantidade) {
+    for (int i = 0; i < quantidade; i++) {
+        plantel[i] = gerarUmJogador();
+    }
+}
+
