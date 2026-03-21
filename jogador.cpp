@@ -16,7 +16,7 @@ using namespace std;
 // };
 
 Vetor<Jogador> pullJogadores(Vetor<Jogador> lista_jogadores, int& numero_jogadores) {
-    Vetor<string> lista = leituraNomes();//passar tamanho
+    Vetor<string> lista = //leituraNomes();//passar tamanho
     int num_por_posicao[4];
 
     num_por_posicao[0] = GR_MIN;
