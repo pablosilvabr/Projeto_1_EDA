@@ -29,6 +29,7 @@ constexpr int MAX_GOLOS = 8;
 //constexpr int Min_GOLOS = 0; //subentendido portanto considero desnecessário
 
 constexpr int MAX_TEMPO_TREINO = 5;
+constexpr int MAX_SUBSTITUICOES = 3; 
 constexpr int QUALIDADE_POR_SEMANA = 1;//pode ser retirado para simplicidade
 
 constexpr int MAX_TITULARES = 11;
