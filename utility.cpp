@@ -4,30 +4,9 @@
 #include "utility.h"
 #include <fstream>
 #include <string>
-#include "Vetor.h"
 #include <iostream>
 using namespace std;
 
-Vetor<string> ler(const char* ficheiro) {
-    Vetor<string> vet;
-    string linha;
-    ifstream is(ficheiro);
-    if (is.is_open()) {
-        while (getline(is,linha)){
-            vetorInserirValor(vet, linha);
-        }
-        is.close();
-    }
-    return vet;
-}
-
-Vetor<string> leituraEquipasA() {
-    return ler(FILE_EQUIPAS);
-}
-
-Vetor<string> leituraNomesA() {
-    return ler(FILE_NOMES);
-}
 
 int tamArqEquipas() {
     int contador = 0;
