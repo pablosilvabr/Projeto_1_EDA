@@ -5,15 +5,35 @@
 #include "jogador.h"
 #include "stdlib.h"
 using namespace std;
-// struct Jogador {
-//     int numero;
-//     std::string* nome;
-//     int posicao;
-//     int idade;
-//     int qualidade;
-//     int probLes;
-//     int probSus;
-// };
+
+Jogador gerarUmJogador() {
+    Jogador novo;
+
+    novo.nome = nomeAleatorio();
+    novo.idade = 18 + (rand() % 17);
+    novo.qualidade = 50 + (rand() % 46);//50 à 95 é possível melhorar em 5 qualidade dos jogadores
+    novo.numero = 1 + (rand() % 99);//após estar criado o plantel, devemos verificar numeros repetidos
+    novo.probSus = 5 + (rand()%6);
+    novo.probLes = 5 + (rand()%6);
+    novo.posicao = (rand() % 4);
+
+    return novo;
+}
+//gera uma lista de jogadores, dependendo da necessidade
+void gerarJogadores(Jogador* destino, int quantidade) {
+    for (int i = 0; i < quantidade; i++) {
+        destino[i] = gerarUmJogador();
+    }
+}
+
+//Precisa criar regras de Jogadores Mínimos por posição
+Jogador* Plantel() {
+    int qtd = 20 + (rand() % 6);
+    Jogador* plantel = new Jogador[qtd];
+    gerarJogadores(plantel, qtd);
+    return plantel;
+}
+
 /*
 Vetor<Jogador> pullJogadores(Vetor<Jogador> lista_jogadores, int& numero_jogadores) {
     //Vetor<string> lista = leituraNomes();//passar tamanho
@@ -49,23 +69,4 @@ Vetor<Jogador> pullJogadores(Vetor<Jogador> lista_jogadores, int& numero_jogador
 */
 
 
-Jogador gerarUmJogador() {
-    Jogador novo;
-
-    novo.nome = nomeAleatorio();
-    novo.idade = 18 + (rand() % 17);
-    novo.qualidade = 50 + (rand() % 51);
-    novo.numero = 1 + (rand() % 99);//após estar criado o plantel, devemos verificar numeros repetidos
-    novo.probSus = 5 + (rand()%6);
-    novo.probLes = 5 + (rand()%6);
-    novo.posicao = (rand() % 5);
-
-    return novo;
-}
-
-void gerarPlantel(Jogador* plantel, int quantidade) {
-    for (int i = 0; i < quantidade; i++) {
-        plantel[i] = gerarUmJogador();
-    }
-}
 
