@@ -1,6 +1,9 @@
+/*
+
 //
 // Created by abili on 19/03/2026.
 //
+
 #include "Vetor.h"
 using namespace std;
 template <typename T>
@@ -38,3 +41,4 @@ string vetorBuscarValor(const Vetor<T> &vetor, const int &indice) {
         return T();
     return vetor.array[indice];
 }
+*/
