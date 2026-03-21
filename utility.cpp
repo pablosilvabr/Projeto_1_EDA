@@ -9,7 +9,7 @@
 using namespace std;
 
 
-/*string* leituraEquipas() {
+int tamArqEquipas() {
     int contador = 0;
     string linha;
 
@@ -21,6 +21,43 @@ using namespace std;
         }
         arquivoEquipas1.close();
     }
+    return contador;
+}
+
+int tamArqNomes() {
+    int contador = 0;
+    string linha;
+
+    ifstream arquivoJogadores1(FILE_NOMES);
+
+    if (arquivoJogadores1.is_open()) {
+        while (getline(arquivoJogadores1,linha)) {
+            contador++;
+        }
+        arquivoJogadores1.close();
+    }
+    return contador;
+}
+
+string* leituraNomes() {
+    int contador = tamArqEquipas();
+
+    string* vNomeJogadores = new string [contador];
+
+    ifstream arquivoJogadores2(FILE_NOMES);
+
+    if (arquivoJogadores2.is_open()) {
+        for (int i = 0; i<contador; i++){
+            getline(arquivoJogadores2,vNomeJogadores[i]);
+        }
+        arquivoJogadores2.close();
+    }
+    return vNomeJogadores;
+}
+
+string* leituraEquipas() {
+    int contador = tamArqEquipas();
+
     string* vOutrasEquipas = new string [contador];
 
     ifstream arquivoEquipas2(FILE_EQUIPAS);
@@ -33,32 +70,6 @@ using namespace std;
     }
     return vOutrasEquipas;
 }
-
-
-string* leituraNomes() {
-    int contador = 0;
-    string linha;
-
-    ifstream arquivoJogadores1(FILE_NOMES);
-
-    if (arquivoJogadores1.is_open()) {
-        while (getline(arquivoJogadores1,linha)) {
-            contador++;
-        }
-        arquivoJogadores1.close();
-    }
-    string* vNomeJogadores = new string [contador];
-
-    ifstream arquivoJogadores2(FILE_NOMES);
-
-    if (arquivoJogadores2.is_open()) {
-        for (int i = 0; i<contador; i++){
-            getline(arquivoJogadores2,vNomeJogadores[i]);
-        }
-        arquivoJogadores2.close();
-    }
-    return vNomeJogadores;
-}*/
 
 
 
