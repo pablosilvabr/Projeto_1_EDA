@@ -5,7 +5,7 @@
 #ifndef PROJETO_1_UTK_H
 #define PROJETO_1_UTK_H
 
-#include "VetorString.h"
+#include "Vetor.h"
 // aqui podemos colocar as constexprantes enquanto
 constexpr int MINIMO_JOGADORES = 20;
 constexpr int MAXIMO_JOGADOS = 30;
@@ -63,11 +63,15 @@ constexpr int MAX_PROBSUS = 20;
  *@brief Lê o ficheiro equipas.txt e armazena o nome das equipas em um array dinâmico.
  * @return Um ponteiro string para o array de vetorOutrasEquipas
  */
-VetorString leituraEquipas();
+//Vetor<Equipa> leituraEquipas();
 
 /**
  * @brief Lê o ficheiro nomes.txt e armazena o nome dos atletas em um array dinâmico.
  * @return Um ponteiro string para o array vetorJogadores
  */
-VetorString leituraNomes();
+//Vetor<Jogador> leituraNomes();
+
+int tamArqEquipas();
+int tamArqNomes()
+
 #endif //PROJETO_1_UTK_H

@@ -1,40 +1,40 @@
 //
 // Created by abili on 19/03/2026.
 //
-#include "VetorString.h"
+#include "Vetor.h"
 using namespace std;
-
-void vetorDestruir(VetorString &vetor) {
+template <typename T>
+void vetorDestruir(Vetor<T> &vetor) {
     delete[] vetor.array;
-    vetor.array = 0;
+    vetor.array = nullptr;
 }
-
-void redimensionarVetor(VetorString &vetor, const int &tam) {
+template <typename T>
+void redimensionarVetor(Vetor<T> &vetor, const int &tam) {
     int nTam = vetor.tam*tam;
-    string * nArray = new string[nTam];
+    T * nArray = new T[nTam];
     for (int i=0;i<vetor.pos;i++)
         nArray[i] = vetor.array[i];
     delete[] vetor.array;
     vetor.array = nArray;
     vetor.tam = nTam;
 }
-
-void vetorInserirValor(VetorString &vetor, const string &valor) {
+template <typename T>
+void vetorInserirValor(Vetor<T> &vetor, const T &valor,const int &indice) {
     if (vetor.pos==vetor.tam)
         redimensionarVetor(vetor, 2);
     vetor.array[vetor.pos++] = valor;
 }
-
-void vetorRemoverValor(VetorString &vetor, const int &indice) {
+template <typename T>
+void vetorRemoverValor(Vetor<T> &vetor, const int &indice) {
     if (indice < 0 || indice >= vetor.pos)
         return;
     for (int i=indice;i<vetor.pos-1;i++)
         vetor.array[i] = vetor.array[i+1];
-    vetor.array[--vetor.pos]="";
+    vetor.array[--vetor.pos]=T();
 }
-
-string vetorBuscarValor(const VetorString &vetor, const int &indice) {
+template <typename T>
+string vetorBuscarValor(const Vetor<T> &vetor, const int &indice) {
     if (indice < 0 || indice >= vetor.pos)
-        return "";
+        return T();
     return vetor.array[indice];
 }

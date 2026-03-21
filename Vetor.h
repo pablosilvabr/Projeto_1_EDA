@@ -6,8 +6,9 @@
 #define PROJETO_1_VETOR_H
 #include <string>
 
-struct VetorString {
-    std::string * array = new std::string[4];
+template <typename T>
+struct Vetor {
+    T * array = new T[4];
     int tam = 4;
     int pos = 0;
 };
@@ -16,21 +17,24 @@ struct VetorString {
  * Liberta a memoria heap ocupada pelo vetor
  * @param vetor Vetor a ser destruido
  */
-void vetorDestruir(VetorString &vetor);
+template <typename T>
+void vetorDestruir(Vetor<T> &vetor);
 
 /**
  * Insere string no vetor
  * @param vetor Vetor a ser modificado
  * @param valor String que vai ser inserida
  */
-void vetorInserirValor(VetorString &vetor, const std::string &valor);
+template <typename T>
+void vetorInserirValor(Vetor<T> &vetor, const T &valor);
 
 /**
  * Remove valor no indice do vetor e re-organiza o vetor
  * @param vetor Vetor a ser modificado
  * @param indice Indice do elemento a ser removido
  */
-void vetorRemoverValor(VetorString &vetor, const int &indice);
+template <typename T>
+void vetorRemoverValor(Vetor<T> &vetor, const int &indice);
 
 /**
  * Retorna o valor do indice no vetor
@@ -38,6 +42,7 @@ void vetorRemoverValor(VetorString &vetor, const int &indice);
  * @param indice Indice do vetor
  * @return String contida no indice
  */
-std::string vetorBuscarValor(const VetorString &vetor, const int &indice);
+template <typename T>
+std::string vetorBuscarValor(const Vetor<T> &vetor, const int &indice);
 
 #endif //PROJETO_1_VETOR_H

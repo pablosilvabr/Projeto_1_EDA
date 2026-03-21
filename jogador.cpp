@@ -15,8 +15,8 @@ using namespace std;
 //     int probSus;
 // };
 
-void pullJogadores(Jogador* lista_jogadores, int& numero_jogadores) {
-    VetorString lista = leituraNomes();//passar tamanho
+Jogador* pullJogadores(Jogador* lista_jogadores, int& numero_jogadores) {
+    //VetorString lista = leituraNomes();//passar tamanho
     int num_por_posicao[4];
 
     num_por_posicao[0] = GR_MIN;
@@ -44,4 +44,5 @@ void pullJogadores(Jogador* lista_jogadores, int& numero_jogadores) {
         //lista_jogadores[i].posicao = (num_por_posicao[pos]>enum[pos]);
 
     }
+    return lista_jogadores;
 }

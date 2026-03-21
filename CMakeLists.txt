@@ -10,7 +10,7 @@ add_executable(Projeto_1 main.cpp
         campeonato.h
         jogador.cpp
         jogador.h
-        VetorString.cpp
+        Vetor.cpp
 )
 
 # Comando para copiar os ficheiros de texto para a pasta de execução automaticamente
