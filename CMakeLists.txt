@@ -15,6 +15,8 @@ add_executable(Projeto_1 main.cpp
         menu.h
         Plantel.cpp
         Plantel.h
+        equipa.cpp
+        equipa.h
 )
 
 # Comando para copiar os ficheiros de texto para a pasta de execução automaticamente
