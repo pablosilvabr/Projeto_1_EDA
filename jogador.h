@@ -1,7 +1,3 @@
-//
-// Created by jesus on 03/19/2026.
-//
-
 #ifndef PROJETO_1_JOGADOR_H
 #define PROJETO_1_JOGADOR_H
 #include <string>
@@ -14,10 +10,17 @@ struct Jogador {
     int probLes;
     int probSus;
     int diasTreino;
+    int semanas_ate_retorno;
 };
-std::string nomeAleatorio(std::string* nomeJogadores, int tamanho);
-Jogador gerarUmJogador(std::string* nomeJogadores, int tamanho);
-void imprimirJogador(Jogador jogador);
+
+/**
+ * Gera um jogador com atributos aleatorios definidos na config
+ * @param nome Nome do jogador
+ * @return Jogador gerado
+ */
+Jogador gerarJogador(const std::string &nome);
+
+void imprimirJogador(const Jogador& jogador);
 
 void inserirJogador(Jogador** array, int& tamTotal, Jogador* novo, int capacidadeMax );
 //Jogador* plantel(int& tam);

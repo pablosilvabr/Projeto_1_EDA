@@ -7,6 +7,7 @@
 #include "plantel.h"
 #include "jogador.h"
 #include "utility.h"
+#include "config.h"
 
 
 using namespace std;
@@ -18,7 +19,7 @@ using namespace std;
  * Imprimir o plantel gerado.
  */
 int numeroJogadoresPlantel() {
-    return numAleatorio(20, 30);
+    return numAleatorio(MINIMO_JOGADORES, MAXIMO_JOGADORES);
 }
 
 /**
@@ -27,10 +28,10 @@ int numeroJogadoresPlantel() {
  * O nome dos jogadores deve ser escolhido aleatoriamente a partir de um arquivo de texto contendo uma lista de nomes.
  * Imprimir o plantel gerado.
  */
-Jogador* gerarPlantel(string* nomeJogadores, int tamanho,int numJogadoresPlantel) {
+Jogador* gerarPlantel(Vetor<string> nomeJogadores,int numJogadoresPlantel) {
     Jogador* plantel = new Jogador[numJogadoresPlantel];
     for (int i = 0; i < numJogadoresPlantel; i++) {
-        Jogador jogador = gerarUmJogador(nomeJogadores, tamanho);
+        Jogador jogador = gerarJogador(vetorBuscarValor(nomeJogadores, i));
         plantel[i] = jogador;
     }
     return plantel;

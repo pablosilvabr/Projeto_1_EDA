@@ -1,34 +1,26 @@
-//
-// Created by jesus on 17/03/2026.
-//
-
 #ifndef PROJETO_1_UTK_H
 #define PROJETO_1_UTK_H
 
 #include "Vetor.h"
 #include <string>
-#include <fstream>
-#include <iostream>
-#include "utility.h"
 
-using namespace std;
 
+Vetor<std::string> leituraEquipas();
+Vetor<std::string> leituraNomes();
 
 /**
- * @brief Lê o ficheiro nomes.txt e armazena o nome dos atletas em um array dinâmico.
- * @return Um ponteiro string para o array vetorJogadores
+ * Gera um número aleatorio entre o minimo e o maximo
+ * @param min Valor minimo
+ * @param max Valor maximo
+ * @return Valor gerado
  */
-//Vetor<std::string> leituraNomesA();
+int numAleatorio(int min = 0, int max = 100);
 
-// int tamArqEquipas();
-// int tamArqNomes();
-// std::string* leituraNomes();
-// std::string nomeAleatorio();
-
-int numAleatorio(int x, int y);
-int tamArq(std::string nomeFicheiro);
-std::string* leituraArq(std::string path, int& tamanho);
-void troca(std::string& a, std::string& b);
-std::string escolher(std::string* array, int& disponiveis);
+/**
+ * Retorna um elemento aleatorio de um vetor e apaga esse elemento do vetor
+ * @param vetor Vetor de strings
+ * @return Elemento aleatorio
+ */
+std::string escolher(Vetor<std::string> &vetor);
 
 #endif //PROJETO_1_UTK_H

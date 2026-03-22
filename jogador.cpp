@@ -2,8 +2,8 @@
 // Created by jesus on 03/19/2026.
 #include <iostream>
 #include "utility.h"
+#include "config.h"
 #include "jogador.h"
-#include "stdlib.h"
 using namespace std;
 
 /**
@@ -14,30 +14,18 @@ using namespace std;
  * Precisa ordenar por posição do jogador
  * Precisa limpar depois no main
  */
-string nomeAleatorio(string* nomeJogadores, int tamanho) {
-    string nomeJogador = nomeJogadores[numAleatorio(0, tamanho - 1)];
-    return nomeJogador;
-}
-/**
- * Gerar um jogador com atributos aleatórios
- * Imprimir os atributos do jogador
- * Gerar um plantel de jogadores, dependendo da necessidade
- * Precisa criar regras de Jogadores Mínimos por posição
- * Precisa ordenar por posição do jogador
- * Precisa limpar depois no main
- */
-Jogador gerarUmJogador(string* nomeJogadores, int tamanho) {
-    Jogador novo;
 
-    novo.nome = nomeAleatorio(nomeJogadores,tamanho);
-    novo.idade = numAleatorio(18, 40);
-    novo.qualidade = numAleatorio(0, 100);
-    novo.numero = numAleatorio(1, 99);//após estar criado o plantel, devemos verificar numeros repetidos
-    novo.probSus = numAleatorio(0, 20);
-    novo.probLes = numAleatorio(0, 15);
+
+Jogador gerarJogador(const string &nome) {
+    Jogador novo;
+    novo.nome = nome;
+    novo.idade = numAleatorio(MIN_IDADE, MAX_IDADE);
+    novo.qualidade = numAleatorio(0, MAX_QUALIDADE);
+    novo.numero = numAleatorio(MIN_NUM, MAX_NUM);//após estar criado o plantel, devemos verificar numeros repetidos
+    novo.probSus = numAleatorio(CHANCE_DE_SUSPENSAO_MIN, CHANCE_DE_SUSPENSAO_MAX);
+    novo.probLes = numAleatorio(CHANCE_DE_LESAO_MIN, CHANCE_DE_LESAO_MAX);
     novo.posicao = numAleatorio(1, 4);
     novo.diasTreino = 0;
-
     return novo;
 }
 /**
@@ -48,7 +36,7 @@ Jogador gerarUmJogador(string* nomeJogadores, int tamanho) {
  * Precisa ordenar por posição do jogador
  * Precisa limpar depois no main
  */
-void imprimirJogador(Jogador jogador) {
+void imprimirJogador(const Jogador& jogador) {
     cout << "Nome: " << jogador.nome << endl;
     cout << "Idade: " << jogador.idade << endl;
     cout << "Qualidade: " << jogador.qualidade << endl;
@@ -58,6 +46,7 @@ void imprimirJogador(Jogador jogador) {
     cout << "Posição: " << jogador.posicao << endl;
     cout << "Dias de Treino: " << jogador.diasTreino << endl;
 }
+
 /**
  * Insere um jogador num array de jogadores, ordenando por posição e número
  * @param array
@@ -65,24 +54,29 @@ void imprimirJogador(Jogador jogador) {
  * @param novo
  * @param capacidadeMax
  */
-void inserirJogador(Jogador** array, int& tamTotal, Jogador* novo, int capacidadeMax ) {
+void inserirJogador(Jogador** array, int& tamTotal, Jogador* novo, int capacidadeMax ) { //inserir jogador devia estar em plantel.cpp imo
     if (tamTotal >= capacidadeMax) {
         cout << " Nao e posiível inserir mais jogadores." << endl;
         return;
     }
     int i=0;
-    while (i<tamTotal) {
-        if (array[i]->posicao == novo->posicao) break;
-        if (array[i]->posicao == novo->posicao && array[i]->numero> novo->numero) break;
+    while (i < tamTotal) {
+        if (array[i]->posicao > novo->posicao)//so alterei == para >
+            break;
+
+        if (array[i]->posicao == novo->posicao &&
+            array[i]->numero > novo->numero)
+            break;
+
         i++;
     }
+
     int posInserir = i;
     for (int j = tamTotal; j > posInserir; j--) {
         array[j] = array[j - 1];
     }
     array[posInserir] = novo;
     tamTotal++;
-
 }
 //Precisa criar regras de Jogadores Mínimos por posição
 //precisa ordenar

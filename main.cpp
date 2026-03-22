@@ -17,16 +17,17 @@ int main() {
     srand(time(NULL));
     //mostrarMenu();
 
-    //depois jogar em um ficheiro separado com uma função para inicialização
-    int tamanho = tamArq("nomes.txt") ;
-    string* nomeJogadores = leituraArq("nomes.txt", tamanho);
-    Jogador jogador1 = gerarUmJogador(nomeJogadores, tamanho);
-    imprimirJogador(jogador1);
-    int numJugadorPlantel = numeroJogadoresPlantel();
-    cout << numJugadorPlantel << endl;
-    Jogador* plantel = gerarPlantel(nomeJogadores, tamanho, numJugadorPlantel);
-    imprimirPlantel(plantel, numJugadorPlantel);
-    return 0;
+    // Vetor<string> nomeJogadores = leituraNomes();
+    // int numJugadorPlantel = numeroJogadoresPlantel();
+    // cout << numJugadorPlantel << endl;
+    // Jogador* plantel = gerarPlantel(nomeJogadores, numJugadorPlantel);
+    // imprimirPlantel(plantel, numJugadorPlantel);
+    // return 0;
+
+
+
+
+
 }
 
 

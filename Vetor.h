@@ -1,6 +1,5 @@
 #ifndef PROJETO_1_VETOR_H
 #define PROJETO_1_VETOR_H
-#include <string>
 
 template <typename T>
 struct Vetor {
@@ -38,13 +37,16 @@ void vetorInserirValor(Vetor<T> &vetor, const T &valor) {
     vetor.array[vetor.pos++] = valor;
 }
 
+template <typename T>
+void vetorSubstituirVetor
+
 /**
  * Remove valor no indice do vetor e re-organiza o vetor
  * @param vetor Vetor a ser modificado
  * @param indice Indice do elemento a ser removido
  */
 template <typename T>
-void vetorRemoverValor(Vetor<T> &vetor, const int &indice) {
+void vetorRemoverValor(Vetor<T> &vetor, const int indice) {
     if (indice < 0 || indice >= vetor.pos)
         return;
     for (int i=indice;i<vetor.pos-1;i++)
@@ -59,7 +61,7 @@ void vetorRemoverValor(Vetor<T> &vetor, const int &indice) {
  * @return String contida no indice
  */
 template <typename T>
-T vetorBuscarValor(const Vetor<T> &vetor, const int &indice) {
+T vetorBuscarValor(const Vetor<T> &vetor, const int indice) {
     if (indice < 0 || indice >= vetor.pos)
         return T();
     return vetor.array[indice];
