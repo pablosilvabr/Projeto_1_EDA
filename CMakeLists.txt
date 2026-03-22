@@ -11,6 +11,10 @@ add_executable(Projeto_1 main.cpp
         jogador.cpp
         jogador.h
         Vetor.cpp
+        menu.cpp
+        menu.h
+        Plantel.cpp
+        Plantel.h
 )
 
 # Comando para copiar os ficheiros de texto para a pasta de execução automaticamente
