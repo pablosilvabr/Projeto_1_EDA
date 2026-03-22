@@ -18,7 +18,10 @@ struct Vetor {
  * @param vetor Vetor a ser destruido
  */
 template <typename T>
-void vetorDestruir(Vetor<T> &vetor);
+void vetorDestruir(Vetor<T> &vetor) {
+    delete[] vetor.array;
+    vetor.array = nullptr;
+}
 
 /**
  * Insere string no vetor
@@ -26,7 +29,18 @@ void vetorDestruir(Vetor<T> &vetor);
  * @param valor String que vai ser inserida
  */
 template <typename T>
-void vetorInserirValor(Vetor<T> &vetor, const T &valor);
+void vetorInserirValor(Vetor<T> &vetor, const T &valor) {
+    if (vetor.pos==vetor.tam) {
+        int nTam = vetor.tam*2;
+        T * nArray = new T[nTam];
+        for (int i=0;i<vetor.pos;i++)
+            nArray[i] = vetor.array[i];
+        delete[] vetor.array;
+        vetor.array = nArray;
+        vetor.tam = nTam;
+    }
+    vetor.array[vetor.pos++] = valor;
+}
 
 /**
  * Remove valor no indice do vetor e re-organiza o vetor
@@ -34,7 +48,13 @@ void vetorInserirValor(Vetor<T> &vetor, const T &valor);
  * @param indice Indice do elemento a ser removido
  */
 template <typename T>
-void vetorRemoverValor(Vetor<T> &vetor, const int &indice);
+void vetorRemoverValor(Vetor<T> &vetor, const int &indice) {
+    if (indice < 0 || indice >= vetor.pos)
+        return;
+    for (int i=indice;i<vetor.pos-1;i++)
+        vetor.array[i] = vetor.array[i+1];
+    vetor.array[--vetor.pos]=T();
+}
 
 /**
  * Retorna o valor do indice no vetor
@@ -43,6 +63,10 @@ void vetorRemoverValor(Vetor<T> &vetor, const int &indice);
  * @return String contida no indice
  */
 template <typename T>
-std::string vetorBuscarValor(const Vetor<T> &vetor, const int &indice);
+T vetorBuscarValor(const Vetor<T> &vetor, const int &indice) {
+    if (indice < 0 || indice >= vetor.pos)
+        return T();
+    return vetor.array[indice];
+}
 
 #endif //PROJETO_1_VETOR_H
