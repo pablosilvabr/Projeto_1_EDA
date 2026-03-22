@@ -8,7 +8,6 @@
 
 int tamArq(std::string nomeFicheiro);
 std::string* leituraArq(std::string path, int& tamanho);
-void troca(std::string& a, std::string& b);
-std::string escolher(std::string* array, int& disponiveis);
+
 
 #endif //PROJETO_1_UTK_H
