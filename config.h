@@ -4,6 +4,7 @@
 // aqui podemos colocar as constexprantes enquanto
 constexpr int MINIMO_JOGADORES = 20;
 constexpr int MAXIMO_JOGADORES = 30;
+constexpr int MAXIMO_ADD_TRANSFERENCIA = 2;
 
 //No Máximo existem 3 Guarda-Redes
 //(GR), 10 Defesas (DEF), 10 Médios (MED) e 7 Avançados (AVA). No mínimos existem 2GR,
