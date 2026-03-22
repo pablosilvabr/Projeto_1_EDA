@@ -20,6 +20,8 @@ add_executable(Projeto_1 main.cpp
         config.h
         adversarios.cpp
         adversarios.h
+        transferencia.cpp
+        transferencia.h
 )
 
 # Comando para copiar os ficheiros de texto para a pasta de execução automaticamente
