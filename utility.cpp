@@ -13,9 +13,8 @@ Vetor<string> ler(const char* ficheiro) {
     string linha;
     ifstream is(ficheiro);
     if (is.is_open()) {
-        while (getline(is,linha)){
+        while (getline(is,linha))
             vetorInserirValor(vet, linha);
-        }
         is.close();
     }
     return vet;
