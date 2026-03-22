@@ -7,6 +7,13 @@
 
 #include "Vetor.h"
 #include <string>
+#include <fstream>
+#include <iostream>
+#include "utility.h"
+
+using namespace std;
+
+
 // aqui podemos colocar as constexprantes enquanto
 constexpr int MINIMO_JOGADORES = 20;
 constexpr int MAXIMO_JOGADOS = 30;
@@ -30,7 +37,7 @@ constexpr int MAX_GOLOS = 8;
 //constexpr int Min_GOLOS = 0; //subentendido portanto considero desnecessário
 
 constexpr int MAX_TEMPO_TREINO = 5;
-constexpr int MAX_SUBSTITUICOES = 3; 
+constexpr int MAX_SUBSTITUICOES = 3;
 constexpr int QUALIDADE_POR_SEMANA = 1;//pode ser retirado para simplicidade
 
 constexpr int MAX_TITULARES = 11;
@@ -59,21 +66,28 @@ constexpr const char* FILE_NOMES = "../config/nomes.txt";
 constexpr int MAX_PROBLES = 15;
 constexpr int MAX_PROBSUS = 20;
 
-
+//Funções
 /**
  *@brief Lê o ficheiro equipas.txt e armazena o nome das equipas em um array dinâmico.
  * @return Um ponteiro string para o array de vetorOutrasEquipas
  */
-Vetor<std::string> leituraEquipasA();
+//Vetor<std::string> leituraEquipasA();
 
 /**
  * @brief Lê o ficheiro nomes.txt e armazena o nome dos atletas em um array dinâmico.
  * @return Um ponteiro string para o array vetorJogadores
  */
-Vetor<std::string> leituraNomesA();
+//Vetor<std::string> leituraNomesA();
 
-int tamArqEquipas();
-int tamArqNomes();
-std::string* leituraNomes();
-std::string nomeAleatorio();
+// int tamArqEquipas();
+// int tamArqNomes();
+// std::string* leituraNomes();
+// std::string nomeAleatorio();
+
+int numAleatorio(int x, int y);
+int tamArq(std::string nomeFicheiro);
+std::string* leituraArq(std::string path, int& tamanho);
+void troca(std::string& a, std::string& b);
+std::string escolher(std::string* array, int& disponiveis);
+
 #endif //PROJETO_1_UTK_H
