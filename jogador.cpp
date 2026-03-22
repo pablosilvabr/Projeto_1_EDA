@@ -3,6 +3,7 @@
 #include "constante.h"
 #include "numAleatorio.h"
 #include "jogador.h"
+#include <algorithm>
 
 using namespace std;
 /**
@@ -25,20 +26,44 @@ string nomeAleatorio(string* nomeJogadores, int tamanho) {
  * Precisa ordenar por posição do jogador
  * Precisa limpar depois no main
  */
-Jogador gerarUmJogador(string* nomeJogadores, int tamanho) {
+Jogador gerarUmJogadorPlantel(string* nomeJogadores, int tamanho, string posicao, int numeroCamisa) {
     Jogador novo;
 
     novo.nome = nomeAleatorio(nomeJogadores,tamanho);
     novo.idade = numAleatorio(18, 40);
     novo.qualidade = numAleatorio(0, 100);
-    novo.numero = numAleatorio(1, 99);//após estar criado o plantel, devemos verificar numeros repetidos
+    novo.numero = numeroCamisa;//após estar criado o plantel, devemos verificar numeros repetidos
     novo.probSus = numAleatorio(0, 20);
     novo.probLes = numAleatorio(0, 15);
-    novo.posicao = numAleatorio(1, 4);
+    novo.posicao = posicao;
     novo.diasTreino = 0;
+
 
     return novo;
 }
+
+
+bool compararNumJogador(Jogador* array,int numComparar, int tamanho) {
+    for (int i = 0; i < tamanho; i++) {
+        if (array[i].numero == numComparar) {
+            return true;
+        }
+    }
+    return false;
+}
+
+void ordenarPorNumero(Jogador* array, int tamanho) {
+    for (int i = 0; i < tamanho - 1; i++) {
+        for (int j = 0; j < tamanho - i - 1; j++) {
+            if (array[j].numero > array[j + 1].numero) {
+
+                std::swap( array[j],  array[j + 1]);
+            }
+        }
+    }
+}
+
+
 /**
  * Gerar um jogador com atributos aleatórios
  * Imprimir os atributos do jogador
@@ -60,13 +85,15 @@ void imprimirJogador(Jogador jogador) {
 
 
 
+
+
 /**
  * Insere um jogador num array de jogadores, ordenando por posição e número
  * @param array
  * @param tamTotal
  * @param novo
  * @param capacidadeMax
- */
+
 void inserirJogador(Jogador** array, int& tamTotal, Jogador* novo, int capacidadeMax ) {
     if (tamTotal >= capacidadeMax) {
         cout << " Nao e posiível inserir mais jogadores." << endl;
@@ -87,7 +114,7 @@ void inserirJogador(Jogador** array, int& tamTotal, Jogador* novo, int capacidad
 
 }
 
-
+*/
 
 
 //Precisa criar regras de Jogadores Mínimos por posição

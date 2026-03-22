@@ -4,7 +4,7 @@
 #include <iostream>
 #include "adversarios.h"
 #include "utility.h"
-
+#include <algorithm>
 #include "numAleatorio.h"
 using namespace std;
 
@@ -13,12 +13,13 @@ using namespace std;
  * Troca o conteúdo de duas strings
  * @param a
  * @param b
- */
+
 void troca(string& a, string& b) {
     string temp = a;
     a = b;
     b = temp;
 }
+*/
 
 /**
  * Escolhe um elemento aleatório de um array de strings, devolve o elemento escolhido e remove-o do array (colocando o último elemento no lugar do escolhido)
@@ -32,7 +33,7 @@ string escolher(string* array, int& disponiveis) {
     }
     int indice = numAleatorio(0, disponiveis - 1);
     string escolhido = array[indice];
-    troca(array[indice], array[disponiveis - 1]);
+    std::swap(array[indice], array[disponiveis - 1]);
     disponiveis--;
     return escolhido;
 }
