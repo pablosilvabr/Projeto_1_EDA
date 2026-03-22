@@ -1,6 +1,3 @@
-//
-// Created by jesus on 03/19/2026.
-//
 
 #ifndef PROJETO_1_JOGADOR_H
 #define PROJETO_1_JOGADOR_H
@@ -13,10 +10,15 @@ struct Jogador {
     int qualidade;
     int probLes;
     int probSus;
+    int diasTreino;
 };
+std::string nomeAleatorio(std::string* nomeJogadores, int tamanho);
+Jogador gerarUmJogador(std::string* nomeJogadores, int tamanho);
+void imprimirJogador(Jogador jogador);
 
-Jogador* plantel(int& tam);
-Jogador gerarUmJogador();
-void gerarJogadores(Jogador* destino, int quantidade);
-Jogador* transferencia();
+void inserirJogador(Jogador** array, int& tamTotal, Jogador* novo, int capacidadeMax );
+//Jogador* plantel(int& tam);
+//Jogador gerarUmJogador();
+//void gerarJogadores(Jogador* destino, int quantidade);
+//Jogador* transferencia();
 #endif //PROJETO_1_JOGADOR_H

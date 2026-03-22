@@ -1,0 +1,45 @@
+#include <fstream>
+#include <string>
+#include <iostream>
+#include "plantel.h"
+#include "jogador.h"
+#include "numAleatorio.h"
+
+
+using namespace std;
+
+/**
+ * Gerar um plantel de jogadores, com um número aleatório de jogadores entre 20 e 30.
+ * Cada jogador deve ter um nome, idade, qualidade, número, posição, probabilidade de suspensão e lesão, e dias de treino.
+ * O nome dos jogadores deve ser escolhido aleatoriamente a partir de um arquivo de texto contendo uma lista de nomes.
+ * Imprimir o plantel gerado.
+ */
+int numeroJogadoresPlantel() {
+    return numAleatorio(20, 30);
+}
+
+/**
+ * Gerar um plantel de jogadores, com um número aleatório de jogadores entre 20 e 30.
+ * Cada jogador deve ter um nome, idade, qualidade, número, posição, probabilidade de suspensão e lesão, e dias de treino.
+ * O nome dos jogadores deve ser escolhido aleatoriamente a partir de um arquivo de texto contendo uma lista de nomes.
+ * Imprimir o plantel gerado.
+ */
+Jogador* gerarPlantel(string* nomeJogadores, int tamanho,int numJogadoresPlantel) {
+    Jogador* plantel = new Jogador[numJogadoresPlantel];
+    for (int i = 0; i < numJogadoresPlantel; i++) {
+        Jogador jogador = gerarUmJogador(nomeJogadores, tamanho);
+        plantel[i] = jogador;
+    }
+    return plantel;
+}
+
+/**
+ * Imprimir o plantel gerado.
+ */
+void imprimirPlantel(Jogador* plantel, int numJogadoresPlantel) {
+    for (int i = 0; i < numJogadoresPlantel; i++) {
+        cout << "Jogador " << i + 1 << ":" << endl;
+        imprimirJogador(plantel[i]);
+        cout << endl;
+    }
+}

@@ -1,12 +1,13 @@
 #include <iomanip>
 #include <iostream>
 #include "jogador.h"
+#include "constante.h"
 
 
 using namespace std;
 
 
-
+/**
 void mostrarMenu() {
     int n = 0;
 
@@ -34,3 +35,4 @@ void mostrarMenu() {
         cout<<setw(10)<<"0"<<endl;
     }
 }
+**/
