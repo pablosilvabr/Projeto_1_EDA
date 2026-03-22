@@ -6,11 +6,12 @@
 #define PROJETO_1_VETOR_H
 #include <string>
 
+
 template <typename T>
 struct Vetor {
     T * array = new T[4];
     int tam = 4;
-    int pos = 0;
+    int pos = 0; // ISTO PODE SER USADO PARA SABER O TAMANHO DO ARRAY
 };
 
 /**
