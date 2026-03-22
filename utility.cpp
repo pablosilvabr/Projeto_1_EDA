@@ -10,7 +10,7 @@ Vetor<string> ler(const char* ficheiro) {
     ifstream is(ficheiro);
     if (is.is_open()) {
         while (getline(is,linha))
-            vetorInserirValor(vet, linha);
+            vetorInserir(vet, linha);
         is.close();
     }
     return vet;
@@ -25,8 +25,8 @@ Vetor<string> leituraNomes() {
 string escolher(Vetor<string> &vetor) {
     if (vetor.pos==0) return "";
     int indice = numAleatorio(0, vetor.pos-1);
-    string escolhido = vetorBuscarValor(vetor, indice);
-    vetorRemoverValor(vetor, indice);
+    string escolhido = vetorBuscar(vetor, indice);
+    vetorRemover(vetor, indice);
     return escolhido;
 }
 

@@ -31,7 +31,7 @@ int numeroJogadoresPlantel() {
 Jogador* gerarPlantel(Vetor<string> nomeJogadores,int numJogadoresPlantel) {
     Jogador* plantel = new Jogador[numJogadoresPlantel];
     for (int i = 0; i < numJogadoresPlantel; i++) {
-        Jogador jogador = gerarJogador(vetorBuscarValor(nomeJogadores, i));
+        Jogador jogador = gerarJogador(vetorBuscar(nomeJogadores, i));
         plantel[i] = jogador;
     }
     return plantel;
