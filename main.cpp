@@ -16,18 +16,12 @@ using namespace std;
 int main() {
     srand(time(NULL));
     //mostrarMenu();
-
-    // Vetor<string> nomeJogadores = leituraNomes();
-    // int numJugadorPlantel = numeroJogadoresPlantel();
-    // cout << numJugadorPlantel << endl;
-    // Jogador* plantel = gerarPlantel(nomeJogadores, numJugadorPlantel);
-    // imprimirPlantel(plantel, numJugadorPlantel);
-    // return 0;
-
-
-
-
-
+    Vetor<string> nomeJogadores = leituraNomes();
+    int numJugadorPlantel = numeroJogadoresPlantel();
+    cout << numJugadorPlantel << endl;
+    Jogador** plantel = gerarPlantel(nomeJogadores, numJugadorPlantel);
+    imprimirPlantel(plantel, numJugadorPlantel);
+    return 0;
 }
 
 

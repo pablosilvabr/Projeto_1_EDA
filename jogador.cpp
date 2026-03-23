@@ -36,15 +36,15 @@ Jogador gerarJogador(const string &nome) {
  * Precisa ordenar por posição do jogador
  * Precisa limpar depois no main
  */
-void imprimirJogador(const Jogador& jogador) {
-    cout << "Nome: " << jogador.nome << endl;
-    cout << "Idade: " << jogador.idade << endl;
-    cout << "Qualidade: " << jogador.qualidade << endl;
-    cout << "Numero: " << jogador.numero << endl;
-    cout << "Probabilidade de Suspensão: " << jogador.probSus << "%" << endl;
-    cout << "Probabilidade de Lesão: " << jogador.probLes << "%" << endl;
-    cout << "Posição: " << jogador.posicao << endl;
-    cout << "Dias de Treino: " << jogador.diasTreino << endl;
+void imprimirJogador(const Jogador* jogador) {
+    cout << "Nome: " << jogador->nome << endl;
+    cout << "Idade: " << jogador->idade << endl;
+    cout << "Qualidade: " << jogador->qualidade << endl;
+    cout << "Numero: " << jogador->numero << endl;
+    cout << "Probabilidade de Suspensão: " << jogador->probSus << "%" << endl;
+    cout << "Probabilidade de Lesão: " << jogador->probLes << "%" << endl;
+    cout << "Posição: " << jogador->posicao << endl;
+    cout << "Dias de Treino: " << jogador->diasTreino << endl;
 }
 
 /**

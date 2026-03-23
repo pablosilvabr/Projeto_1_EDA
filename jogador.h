@@ -20,7 +20,7 @@ struct Jogador {
  */
 Jogador gerarJogador(const std::string &nome);
 
-void imprimirJogador(const Jogador& jogador);
+void imprimirJogador(const Jogador* jogador);
 
 void inserirJogador(Jogador** array, int& tamTotal, Jogador* novo, int capacidadeMax );
 //Jogador* plantel(int& tam);

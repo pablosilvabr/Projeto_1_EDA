@@ -28,22 +28,36 @@ int numeroJogadoresPlantel() {
  * O nome dos jogadores deve ser escolhido aleatoriamente a partir de um arquivo de texto contendo uma lista de nomes.
  * Imprimir o plantel gerado.
  */
-Jogador* gerarPlantel(Vetor<string> nomeJogadores,int numJogadoresPlantel) {
-    Jogador* plantel = new Jogador[numJogadoresPlantel];
+Jogador** gerarPlantel(Vetor<string> nomeJogadores, int numJogadoresPlantel) {
+    Jogador** plantel = new Jogador*[numJogadoresPlantel];
+
     for (int i = 0; i < numJogadoresPlantel; i++) {
-        Jogador jogador = gerarJogador(vetorBuscar(nomeJogadores, i));
-        plantel[i] = jogador;
+        plantel[i] = new Jogador;
+        *plantel[i] = gerarJogador(vetorBuscar(nomeJogadores, i));
     }
+
     return plantel;
 }
 
 /**
  * Imprimir o plantel gerado.
  */
-void imprimirPlantel(Jogador* plantel, int numJogadoresPlantel) {
+void imprimirPlantel(Jogador** plantel, int numJogadoresPlantel) {
     for (int i = 0; i < numJogadoresPlantel; i++) {
         cout << "Jogador " << i + 1 << ":" << endl;
         imprimirJogador(plantel[i]);
         cout << endl;
     }
+}
+
+int index_melhor(Jogador** plantel, int tipo, int tamanho) {
+    int best = -1;
+
+    for (int i = 0; i < tamanho; i++) {
+        if (plantel[i]->posicao == tipo) {
+            if (best == -1 || plantel[i]->qualidade > plantel[best]->qualidade)
+                best = i;
+        }
+    }
+    return best;
 }
