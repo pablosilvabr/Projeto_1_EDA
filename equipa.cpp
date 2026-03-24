@@ -15,24 +15,7 @@
 //     for (int i = 0; i < MAX_TITULARES; i++) {
 //         if ()//como fazer sem saber se o jogador está lesionado????
 
-void finalJornada(Equipa* equipa) {
-    bool out = false;
-    for (int i=0;i<MAXIMO_JOGADORES;i++) {
 
-        if (equipa->titulares[i]->probLes >= numAleatorio()) {
-            //mover para array lesionados
-            out = true;
-        }
-        if (equipa->titulares[i]->probSus >= numAleatorio()) {
-            //mover para array suspensão
-            out = true;
-        }
-    }
-    if (out) {
-        //refazer a convocação
-    }
-
-}
 
 Equipa gerarEquipa(Jogador** plantel, int tamanho, std::string nome) {
     Equipa equipa{};
@@ -81,13 +64,71 @@ void convocar(Equipa& equipa, int tamanho) {
         }
     }
 }
-void desconvocar(Equipa& equipa) {
-    for (int i = 0; i < MAX_TITULARES; i++) {
 
+
+
+void finalJornada(Equipa* equipa) {
+    bool out = false;
+    for (int i=0;i<MAXIMO_JOGADORES;i++) {
+        Jogador* jogador = equipa->titulares[i];
+        if (jogador->probLes >= numAleatorio()) {
+            jogador->semanas_ate_retorno = numAleatorio(1, LIMITE_TEMPO_LESIONADO);
+            vetorInserir(equipa->lesionados, jogador); // CODIGO QUE DEVE SER ALTERADO MAS PROVAVELMENTE NUNCA SERA ALTERADO - 23/03/2026
+            for (int j=0;j<MAX_TITULARES;j++)
+                if (jogador==equipa->plantel[j]) {
+                    equipa->titulares[i]=nullptr;
+                    break;
+                }
+            out = true;
+        }
+        if (jogador->probSus >= numAleatorio()) {
+            vetorInserir(equipa->suspensos, jogador);
+            jogador->semanas_ate_retorno = numAleatorio(1, LIMITE_TEMPO_SUSPENSO);
+            for (int j=0;j<MAX_TITULARES;j++)
+                if (jogador==equipa->plantel[j]) {
+                    vetorBuscar(equipa->suspensos, equipa->suspensos.pos)->semanas_ate_retorno = numAleatorio(1, LIMITE_TEMPO_LESIONADO);
+                    jogador=nullptr;
+                    break;
+                }
+            out = true;
+        }
+    }
+    if (out) {
+        convocar(*equipa, MAXIMO_JOGADORES); // não sei se ta certo? mas veremos se der olha
     }
 }
 
-
-
-
-
+void recuperarJogadores(Equipa* equipa, const int tamanho) {
+    Vetor<Jogador*> lesionados = equipa->lesionados;
+    Vetor<Jogador*> suspensos = equipa->suspensos;
+    for (int i=0;i<lesionados.pos;i++) { // codigo criado no dia 24/03/2026
+        Jogador* jogador = vetorBuscar(lesionados, i);
+        if (jogador->semanas_ate_retorno == 0) {
+            for (int j=tamanho-1;j>=0;j--) {
+                equipa->plantel[j+1] = equipa->plantel[j];
+                if (equipa->plantel[j]->posicao<=jogador->posicao) {
+                    equipa->plantel[j] = jogador;
+                    break;
+                }
+            }
+            vetorRemover(lesionados, i);
+            break;
+        }
+        jogador->semanas_ate_retorno--;
+    }
+    for (int i=0;i<suspensos.pos;i++) {
+        Jogador* jogador = vetorBuscar(suspensos, i);
+        if (jogador->semanas_ate_retorno == 0) {
+            for (int j=tamanho-1;j>=0;j--) {
+                equipa->plantel[j+1] = equipa->plantel[j];
+                if (equipa->plantel[j]->posicao<=jogador->posicao) {
+                    equipa->plantel[j] = jogador;
+                    break;
+                }
+            }
+            vetorRemover(suspensos, i);
+            break;
+        }
+        jogador->semanas_ate_retorno--;
+    }
+}
