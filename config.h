@@ -48,10 +48,12 @@ constexpr int MAX_NUM = 99;
 constexpr int MIN_IDADE = 18;
 constexpr int MAX_IDADE = 40;
 
-constexpr int POSICAO_GR = 1;
-constexpr int POSICAO_DEF = 2;
-constexpr int POSICAO_MED = 3;
-constexpr int POSICAO_AVA = 4;
+enum Posicao {
+    POSICAO_GR = 1,
+    POSICAO_DEF,
+    POSICAO_MED,
+    POSICAO_AVA
+};
 
 constexpr const char* FILE_EQUIPAS = "../config/equipas.txt";
 constexpr const char* FILE_NOMES = "../config/nomes.txt";

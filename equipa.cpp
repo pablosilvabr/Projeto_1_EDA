@@ -32,8 +32,6 @@ void finalJornada(Equipa* equipa) {
         //refazer a convocação
     }
 
-
-
 }
 
 Equipa gerarEquipa(Jogador** plantel, int tamanho, std::string nome) {
@@ -81,6 +79,11 @@ void convocar(Equipa& equipa, int tamanho) {
             }
 
         }
+    }
+}
+void desconvocar(Equipa& equipa) {
+    for (int i = 0; i < MAX_TITULARES; i++) {
+
     }
 }
 
