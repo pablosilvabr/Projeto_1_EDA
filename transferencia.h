@@ -4,6 +4,6 @@
 
 #ifndef PROJETO_1_TRANSFERENCIA_H
 #define PROJETO_1_TRANSFERENCIA_H
-void imprimirTransferencia(Jogador* transferencia, int numJogadoresPlantel);
-Jogador* transferencias (Vetor<std::string> nomeJogadores,int MAXIMO_ADD_TRANSFERENCIA);
+void imprimirMercado(Vetor<Jogador> &mercado);
+Jogador* mercadoTransferencias (Vetor<Jogador> &mercadoTransferencia, Vetor<std::string> nomeJogadores);
 #endif //PROJETO_1_TRANSFERENCIA_H
